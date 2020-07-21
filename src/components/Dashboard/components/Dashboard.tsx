@@ -37,15 +37,13 @@ const Dashboard = ({}: Props) => {
     {data.length > 0 ? (
             data.map(d => (
               <TableRow
-                key={d.data.telephone}
-                creditCard={d.data.creditCard.number}
-                firstName={d.data.firstName}
-                lastName={d.data.lastName}
                 loading={false}
-                telephone={d.data.telephone}
+                key={d.data.title}
+                title={d.data.title}
+                description={d.data.description}
               />
             ))
-          ) : (
+          ) : ( 
             <>
              {"loading"}
             </>

@@ -1,14 +1,12 @@
 
 
-export default ({ creditCard, firstName, loading, lastName, telephone }) => (
+export default ({ title, description, loading }) => (
     <div className="table table-row">
       <p className={loading ? 'loading' : ''}>
-        {firstName} {lastName}
+        {title} 
       </p>{' '}
-      <p className={`telephone ${loading ? 'loading' : ''}`}>{telephone}</p>
-      <p className={`credit-card credit-card-number ${loading ? 'loading' : ''}`}>
-        {creditCard && <img src="/icons/visa.svg" />}
-        {creditCard}
-      </p>
+      <p className={loading ? 'loading' : ''}>
+        {description} 
+      </p>{' '}
     </div>
   )
