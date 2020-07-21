@@ -3,7 +3,7 @@ import faunadb from 'faunadb'
 // your secret hash
 const secret = process.env.FAUNADB_SECRET_KEY
 const q = faunadb.query
-const client = new faunadb.Client({ secret })
+const client = new faunadb.Client({ secret: "fnADxTlR8tACBURsU8zJlh4M2-9GVDRw3u6T_TUU" })
 
 module.exports = async (req, res) => {
   try {
