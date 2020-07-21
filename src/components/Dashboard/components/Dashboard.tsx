@@ -22,7 +22,7 @@ export const query = {
 interface Props {}
 
 const Dashboard = ({}: Props) => {
-  <Fragment>
+  return <Fragment>
     <>
       <h2>{'efef'}</h2>
    </>
