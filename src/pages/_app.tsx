@@ -17,4 +17,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;
 };
 
-export default wMyApp;
+export default MyApp;
