@@ -1,4 +1,4 @@
-const faunadb = require('faunadb')
+import faunadb from 'faunadb'
 
 // your secret hash
 const secret = process.env.FAUNADB_SECRET_KEY
@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
       )
     )
     // ok
-    res.status(200).json(dbs.data)
+    res.status(200).json((dbs as any).data)
   } catch (e) {
     // something went wrong
     res.status(500).json({ error: e.message })
