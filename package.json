@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "vercel:dev": "vercel dev"
   },
   "dependencies": {
     "@apollo/react-hooks": "3.1.5",
@@ -26,6 +27,7 @@
     "babel-plugin-graphql-tag": "2.5.0",
     "cookie": "0.4.1",
     "date-fns": "2.13.0",
+    "faunadb": "^2.14.2",
     "graphql": "15.0.0",
     "graphql-tag": "2.10.3",
     "https-proxy-agent": "5.0.0",
