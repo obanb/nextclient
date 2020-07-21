@@ -22,12 +22,9 @@ export const query = {
 interface Props {}
 
 const Dashboard = ({}: Props) => {
-  const { loading, data } = useQuery<any>(query.gql.query, {
-    fetchPolicy: 'network-only',
-  });
-  return !loading && <Fragment>
+  <Fragment>
     <>
-      <h2>{JSON.stringify(data)}</h2>
+      <h2>{'efef'}</h2>
    </>
   </Fragment>;
 };
