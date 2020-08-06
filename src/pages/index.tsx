@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { NextPage } from 'next';
 import { useTranslation } from 'react-i18next';
-import Dashboard from '../components/Dashboard/components/Dashboard';
 
 const IndexPage: NextPage = () => {
   const [t] = useTranslation('common');
 
-  return (
-    <Dashboard />
-  );
+  return <Fragment>{'hi'}</Fragment>;
 };
 
 export default IndexPage;
