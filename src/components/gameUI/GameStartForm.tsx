@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import * as React from 'react';
-import { Grid, TextField } from '@material-ui/core';
+import { Button, Grid, TextField } from '@material-ui/core';
 
 interface Props {}
 
@@ -36,6 +36,12 @@ const GameStartForm = ({}: Props) => {
             variant="outlined"
             name="turntime"
           />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
         </Grid>
       </form>
     </Grid>
