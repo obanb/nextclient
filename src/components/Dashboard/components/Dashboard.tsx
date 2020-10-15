@@ -1,24 +1,5 @@
 import React, { Fragment } from 'react';
-import { useApolloClient, useQuery } from '@apollo/react-hooks';
 import TableRow from './TableRow'
-
-import gql from 'graphql-tag';
-
-export const query = {
-  gql: {
-    query: gql`
-      query Query {
-        group {
-          list {
-            result {
-              name
-            }
-          }
-        }
-      }
-    `,
-  },
-};
 
 interface Props {}
 

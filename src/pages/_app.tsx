@@ -1,8 +1,6 @@
 import React from 'react';
 import { AppProps } from 'next/app';
 
-import './_app.scss';
-
 import i18n, { initialI18nSettings, Language } from '../lib/i18n';
 
 i18n.init({
