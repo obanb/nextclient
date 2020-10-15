@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppProps } from 'next/app';
+import '../../styles/tailwind.css';
 
 import i18n, { initialI18nSettings, Language } from '../lib/i18n';
 
