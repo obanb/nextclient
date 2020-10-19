@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import '../../styles/tailwind.css';
 
 import i18n, { initialI18nSettings, Language } from '../lib/i18n';
+import { withApollo } from '../lib/apollo';
+
 
 i18n.init({
   ...initialI18nSettings,
@@ -16,4 +18,4 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return <Component {...pageProps} />;
 };
 
-export default MyApp;
+export default withApollo({ ssr: true })(MyApp);
