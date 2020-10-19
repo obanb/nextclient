@@ -30,6 +30,7 @@
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-hook-form": "^6.9.2",
     "react-i18next": "11.4.0",
     "tailwindcss": "^1.9.2",
     "typescript": "3.8.3"
