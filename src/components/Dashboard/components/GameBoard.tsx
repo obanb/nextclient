@@ -1,51 +1,76 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
+import { BoardTile } from './BoardTile';
 
 interface Props {
   input: {
-    boardsize: number,
-    playername: string
-  }
+    boardsize: number;
+    playername: string;
+  };
+  config: {
+    tile: {
+      tileWidth: number;
+      tileHeight: number;
+    };
+  };
 }
 
 interface TileDesc {
-  positionX: number,
-  positionY: number,
-  normalizedPosition: number,
-  component: ReactElement<any, any>
+  positionX: number;
+  positionY: number;
+  normalizedPosition: number;
+  uniqueId: number;
+  component: ReactElement<any, any>;
 }
 
-const BoardTile = ({positionY, positionX}) => {
-  return <div className={styles.tile}>{positionX} | {positionY}</div>
-}
 
-const GameBoard = ({input}: Props) => {
+const GameBoard = ({ input, config }: Props) => {
   const tiles: TileDesc[] = [];
 
+  const boardWidth = config.tile.tileWidth * input.boardsize;
+  const boardHeith = config.tile.tileHeight * input.boardsize;
+
   const renderTiles = () => {
-    for (let i = 0; i < input.boardsize; i++) {
-      console.log(`tile ${i} from ${input.boardsize}`)
-      tiles.push({
-        positionX: i,
-        positionY: i,
-        normalizedPosition: i + i,
-        component: <BoardTile key={i} positionX={i} positionY={i} />
+    let uniqueId = 0;
+
+    for (let x = 0; x < input.boardsize; x++) {
+      for (let y = 0; y < input.boardsize; y++) {
+        uniqueId++;
+        console.log(`tile ${x} ${y} from ${input.boardsize}`);
+
+        tiles.push({
+          positionX: x,
+          positionY: y,
+          normalizedPosition: x + y,
+          uniqueId: uniqueId,
+          component: (
+            <BoardTile
+              key={uniqueId}
+              positionX={x}
+              positionY={y}
+              uniqueId={uniqueId}
+              config={config.tile}
+            />
+          ),
+        });
       }
-      );
     }
-  }
+  };
   renderTiles();
 
-  return <Fragment>
-    {
-      tiles.map(tile => {
+  return (
+    <div
+      style={{ height: boardHeith, width: boardWidth }}
+      className={styles.board}
+    >
+      {tiles.map((tile) => {
         return tile.component;
-      })
-    }
-  </Fragment>
+      })}
+    </div>
+  );
 };
 
 const styles = {
-  tile: "border-2 border-gray-600 h-16 w-16"
-}
+  board: 'float-left',
+};
 
 export default GameBoard;
