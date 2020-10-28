@@ -2,6 +2,7 @@ import React from 'react';
 
 export const BoardTile = ({ positionY, positionX, uniqueId, config }) => {
 
+
   const handleClick = () => {
     console.log(`click on ${uniqueId}`)
   }
