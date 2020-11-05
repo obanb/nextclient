@@ -7,7 +7,7 @@ interface Props {}
 const Dashboard = ({}: Props) => {
   return <Fragment>
           <GameController/>
-          <ApolloTest/>
+          {/*<ApolloTest/>*/}
          </Fragment>
 };
 

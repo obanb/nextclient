@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import TableRow from './TableRow';
 import { NewGameForm } from './NewGameForm';
 import GameBoard from './GameBoard';
+import { GameInfo } from './GameInfo';
+import { EntityInfo } from './EntityInfo';
 
 interface Props {}
 
@@ -27,6 +29,7 @@ const GameController = ({}: Props) => {
 
   return (
     <Fragment>
+      <GameInfo/>
       {showBoard && (
         <GameBoard
           input={boardInput}
@@ -34,6 +37,7 @@ const GameController = ({}: Props) => {
         />
       )}
       {showForm && <NewGameForm onSubmit={handleInitBoard} />}
+      <EntityInfo/>
     </Fragment>
   );
 };
