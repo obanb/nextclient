@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import TableRow from './TableRow';
 import { NewGameForm } from './NewGameForm';
 import GameBoard from './GameBoard';
 import { GameInfo } from './GameInfo';

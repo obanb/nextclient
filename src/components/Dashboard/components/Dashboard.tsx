@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import GameController from './GameController';
-import ApolloTest from './ApolloTest';
 
 interface Props {}
 

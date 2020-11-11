@@ -1,11 +1,28 @@
 import { useState } from 'react';
 
-export type useTarget = () => [boolean, () => void];
+/**
+ * useTarget hook
+ * implements entity after target behavior
+ */
 
-export const useTarget: useTarget = () => {
+export type UseTarget = () => [boolean, () => void];
+
+
+/**
+ * inner functions / hooks
+ */
+
+type OnTarget = () => void;
+
+
+/**
+ * impl
+ */
+
+export const useTarget: UseTarget = () => {
   const [isTargeted, setShowIsTargeted] = useState(false);
 
-  const onTarget = () => {
+  const onTarget: OnTarget = () => {
     console.log(isTargeted ? 'already targeted' : 'new target');
     setShowIsTargeted(isTargeted ? false : true);
   };

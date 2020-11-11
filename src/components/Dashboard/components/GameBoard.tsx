@@ -49,6 +49,7 @@ const GameBoard = ({ input, config }: Props) => {
               positionY={y}
               uniqueId={uniqueId}
               config={config.tile}
+              figure={null}
             />
           ),
         });
