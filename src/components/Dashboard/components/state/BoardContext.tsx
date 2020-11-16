@@ -5,16 +5,20 @@ const boardContext = createContext(boardInitialState);
 const { Provider } = boardContext;
 
 export interface BoardState  {
-  player1figureTile: number,
-  player2figureTile: number
+  tileTargeted: number,
+  figureTargeted: number
 }
 
-export type BoardActionTypes = 'PLAYER_MOVE'
+export enum BoardActionTypes {
+  targetTile = "TARGET_TILE",
+  targetFigure = "TARGET_TILE",
+  clearTargets = "CLEAR_TARGETS"
+}
 
 const boardReducer = (state: BoardState, action) => {
     switch(action.type) {
-      case 'action description':
-        const newState = {}
+      case  BoardActionTypes.targetTile:
+        const newState = {...state, tileTargeted: action.payload};
         return newState;
       default:
         throw new Error();
