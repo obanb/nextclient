@@ -1,49 +1,67 @@
 import React, { createContext, useReducer } from 'react';
-import { Endomorphism } from 'fp-ts/lib/function';
 import { pipe } from 'fp-ts/lib/pipeable';
 import * as O from 'fp-ts/lib/Option';
-import * as E from 'fp-ts/lib/Either';
-import { keyof } from 'io-ts';
-import * as R from 'fp-ts/lib/Record';
-import { Nullable } from 'apollo-client/benchmark/util';
+
+/**
+ * Types
+ */
+
+export interface BoardState {
+  tileTargeted: number;
+  figureTargeted: number;
+}
+
+type SET_TILE_TARGETED = { type: 'SET_TILE_TARGETED', payload: number };
+type SET_FIGURE_TARGETED = { type: 'SET_TILE_TARGETED', payload: number };
+
+type BoardActions =
+  SET_TILE_TARGETED |
+  SET_FIGURE_TARGETED
+
+type BoardActionImpl = (state: BoardState, action: BoardActions) => BoardState;
+
+interface ActionHandler {[key:string] : BoardActionImpl}
+
+/**
+ * Impl
+ */
 
 const boardInitialState = {
   tileTargeted: 0,
   figureTargeted: 0
 };
 
-export interface BoardState {
-  tileTargeted: number;
-  figureTargeted: number;
-}
-const setTileTargeted = (state: BoardState, action: BoardActions)  => pipe(state)
+const setTileTargeted = (state: BoardState, action: SET_TILE_TARGETED) => pipe({...state, tileTargeted: action.payload})
+const setFigureTargeted = (state: BoardState, action: SET_FIGURE_TARGETED) => pipe({...state, figureTargeted: action.payload})
 
-const actionHandlers: {[key:string] : (state:BoardState,action: BoardActions) => BoardState}= {
+const actionHandler: ActionHandler = {
   SET_TILE_TARGETED: setTileTargeted,
+  SET_FIGURE_TARGETED: setFigureTargeted
 }
-
-type BoardActions = { type: 'SET_TILE_TARGETED', payload: string } | { type: 'SET_TILE_TARGETET', payload: number }
-
 
 const boardReducer = (state: BoardState = boardInitialState, action: (BoardActions)) => {
   return pipe(
-    O.fromNullable(actionHandlers[action.type]),
+    actionHandler[action.type],
+    O.fromNullable,
     O.map(f => f(state, action)),
     O.getOrElse(() => state)
   )
 };
 
-export const BoardReadContext = React.createContext<BoardState>(boardInitialState);
-export const BoardWriteContext = React.createContext<Nullable<React.Dispatch<BoardActions>>>(null);
+ const BoardReadContext = React.createContext<BoardState>(boardInitialState);
+ const BoardDispatchContext = React.createContext<React.Dispatch<BoardActions>>(null);
 
-export const BoardContextProvider = ({children}) => {
+ const BoardContext = ({children}) => {
   const [state, dispatch] = React.useReducer(boardReducer, boardInitialState);
 
   return (
     <BoardReadContext.Provider value={state}>
-      <BoardWriteContext.Provider value={dispatch}>{children}</BoardWriteContext.Provider>
+      <BoardDispatchContext.Provider value={dispatch}>{children}</BoardDispatchContext.Provider>
     </BoardReadContext.Provider>
   );
 };
 
+ const useBoardReadContext = () => React.useContext(BoardReadContext);
+ const useBoardDispatchContext = () => React.useContext(BoardDispatchContext);
 
+export { BoardContext, useBoardReadContext, useBoardDispatchContext };
