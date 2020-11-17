@@ -1,27 +1,32 @@
 import React from 'react';
 import { useTarget } from './hooks/useTarget';
 import { Figure } from './Figure';
+import { useBoardDispatchContext } from './state/BoardContext';
 
-export const BoardTile = ({
+const BoardTile = ({
   positionY,
   positionX,
   uniqueId,
   config,
   figure,
+  targeted
 }) => {
   const [isTargeted, onTarget] = useTarget();
 
+  const dispatch = useBoardDispatchContext();
+
   const handleClick = () => {
-    console.log(`click on ${uniqueId}`);
+    dispatch({type: 'SET_TILE_TARGETED', payload:uniqueId})
     onTarget();
   };
 
   return (
     <div
       onClick={handleClick}
-      className={`${isTargeted ? styles.targeted : styles.tile}`}
+      className={`${targeted ? styles.targeted : styles.tile}`}
       style={{ width: config.tileWidth, height: config.tileHeight }}
     >
+      {console.log('render')}
       <div className={devStyles.devInfo}>{uniqueId}</div>
       {uniqueId === 1 && <Figure/>}
     </div>
@@ -36,3 +41,5 @@ const styles = {
 const devStyles = {
   devInfo: 'z-0 absolute'
 }
+
+export default React.memo(BoardTile);

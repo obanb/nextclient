@@ -31,8 +31,8 @@ const boardInitialState = {
   figureTargeted: 0
 };
 
-const setTileTargeted = (state: BoardState, action: SET_TILE_TARGETED) => pipe({...state, tileTargeted: action.payload})
-const setFigureTargeted = (state: BoardState, action: SET_FIGURE_TARGETED) => pipe({...state, figureTargeted: action.payload})
+const setTileTargeted = (state: BoardState, action: SET_TILE_TARGETED):BoardState => pipe({...state, tileTargeted: action.payload})
+const setFigureTargeted = (state: BoardState, action: SET_FIGURE_TARGETED): BoardState => pipe({...state, figureTargeted: action.payload})
 
 const actionHandler: ActionHandler = {
   SET_TILE_TARGETED: setTileTargeted,
@@ -44,7 +44,9 @@ const boardReducer = (state: BoardState = boardInitialState, action: (BoardActio
     actionHandler[action.type],
     O.fromNullable,
     O.map(f => f(state, action)),
-    O.getOrElse(() => state)
+    O.getOrElse(() => {
+      return state;
+    })
   )
 };
 

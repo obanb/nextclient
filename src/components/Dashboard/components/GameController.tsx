@@ -3,6 +3,7 @@ import { NewGameForm } from './NewGameForm';
 import GameBoard from './GameBoard';
 import { GameInfo } from './GameInfo';
 import { EntityInfo } from './EntityInfo';
+import { BoardContext } from './state/BoardContext';
 
 interface Props {}
 
@@ -30,10 +31,12 @@ const GameController = ({}: Props) => {
     <Fragment>
       <GameInfo/>
       {showBoard && (
-        <GameBoard
-          input={boardInput}
-          config={{ tile: { tileHeight: 40, tileWidth: 40 } }}
-        />
+        <BoardContext>
+          <GameBoard
+            input={boardInput}
+            config={{ tile: { tileHeight: 40, tileWidth: 40 } }}
+          />
+        </BoardContext>
       )}
       {showForm && <NewGameForm onSubmit={handleInitBoard} />}
       <EntityInfo/>

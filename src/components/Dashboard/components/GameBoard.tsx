@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { BoardTile } from './BoardTile';
+import { useBoardDispatchContext, useBoardReadContext } from './state/BoardContext';
+import BoardTile from './BoardTile';
 
 interface Props {
   input: {
@@ -29,6 +30,9 @@ const GameBoard = ({ input, config }: Props) => {
   const boardWidth = config.tile.tileWidth * input.boardsize;
   const boardHeith = config.tile.tileHeight * input.boardsize;
 
+  const state = useBoardReadContext();
+
+
   const renderTiles = () => {
     let uniqueId = 0;
 
@@ -50,6 +54,7 @@ const GameBoard = ({ input, config }: Props) => {
               uniqueId={uniqueId}
               config={config.tile}
               figure={null}
+              targeted={state.tileTargeted === uniqueId ? true: false}
             />
           ),
         });
@@ -74,4 +79,4 @@ const styles = {
   board: 'float-left',
 };
 
-export default GameBoard;
+export default React.memo(GameBoard);
