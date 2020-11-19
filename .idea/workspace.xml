@@ -33,30 +33,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4080c049-daaf-4906-927d-2c29f59b8118" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vampire.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/BoardTile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/BoardTile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/GameBoard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameBoard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/GameController.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameController.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/state/BoardContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/state/BoardContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/Figure.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/Figure.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>URL</find>
-      <find>gra</find>
-      <find>getToken</find>
-      <find>agreguju SMLOUVY odbernych mist s OBCHONDIMI PARTNERY</find>
-      <find>test</find>
-      <find>Apollo</find>
-      <find>ApolloTest</find>
-      <find>&lt;Apoll</find>
-      <find>TableRow</find>
-      <find>useReducer</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +66,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tyr/packages/tyr-frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -87,6 +76,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="C:\Users\obanb\Desktop\up-graphql-origin\nextclient\src\components\Dashboard\components" />
       <recent name="C:\Users\obanb\Desktop\up-graphql-origin\nextclient\src\lib" />
       <recent name="$PROJECT_DIR$/src/components/Dashboard/components" />
@@ -141,6 +131,10 @@
       <workItem from="1605540074747" duration="1149000" />
       <workItem from="1605627677321" duration="6494000" />
       <workItem from="1605635765961" duration="943000" />
+      <workItem from="1605647915033" duration="65000" />
+      <workItem from="1605816357766" duration="2230000" />
+      <workItem from="1605822774694" duration="1101000" />
+      <workItem from="1605823885952" duration="798000" />
     </task>
     <servers />
   </component>
@@ -174,9 +168,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605632623992" />
-    <state x="660" y="284" width="672" height="678" key="search.everywhere.popup" timestamp="1605633703853">
+    <state x="660" y="284" width="672" height="678" key="search.everywhere.popup" timestamp="1605822657712">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="660" y="284" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605633703853" />
+    <state x="660" y="284" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1605822657712" />
   </component>
 </project>

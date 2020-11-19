@@ -34,8 +34,8 @@ const BoardTile = ({
 };
 
 const styles = {
-  tile: 'border-2 border-gray-600 float-left z-10',
-  targeted: 'border-4 border-orange-900 float-left',
+  tile: 'border border-gray-600 float-left z-10',
+  targeted: 'border border-orange-900 float-left bg-green-100',
 };
 
 const devStyles = {

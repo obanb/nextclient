@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTarget } from './hooks/useTarget';
+// @ts-ignore
+import Vampire from "../../../../public/vampire.svg"
 
 interface FigureProps {
   uniqueId: number,
@@ -24,7 +26,7 @@ export const Figure = (props: FigureProps) => {
     console.log(props.uniqueId)
     onTarget();
   };
-  return <div onClick={handleClick} style={vanillaStyles.body} className={styles.body}></div>;
+  return <div onClick={handleClick} className={styles.body}><Vampire style={vanillaStyles.figure}/></div>;
 };
 
 
@@ -43,6 +45,10 @@ const styles = {
 
 const vanillaStyles = {
   body: {
+    width: 35,
+    height: 35
+  },
+  figure: {
     width: 35,
     height: 35
   }
