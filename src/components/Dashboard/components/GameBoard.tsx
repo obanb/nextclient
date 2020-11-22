@@ -32,6 +32,7 @@ const GameBoard = ({ input, config }: Props) => {
 
   const state = useBoardReadContext();
 
+ console.log(JSON.stringify(state));
 
   const renderTiles = () => {
     let uniqueId = 0;
@@ -41,7 +42,9 @@ const GameBoard = ({ input, config }: Props) => {
         uniqueId++;
         // console.log(`tile ${x} ${y} from ${input.boardsize}`);
 
-        const tileFigure = state.figurePositions[uniqueId];
+        const tileFigure = state.figurePositions[uniqueId.toString()];
+
+        console.log(tileFigure);
 
         tiles.push({
           positionX: x,

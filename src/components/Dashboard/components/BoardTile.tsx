@@ -2,6 +2,7 @@ import React from 'react';
 import { useTarget } from './hooks/useTarget';
 import { Figure } from './Figure';
 import { useBoardDispatchContext } from './state/BoardContext';
+import { constVoid } from 'fp-ts/function';
 
 const BoardTile = ({
   positionY,
@@ -16,13 +17,14 @@ const BoardTile = ({
   const dispatch = useBoardDispatchContext();
 
   const handleClick = () => {
+    console.log('tile', {id: uniqueId})
     dispatch({ type: 'SET_TILE_TARGETED', payload: uniqueId });
     onTarget();
   };
 
   return (
     <div
-      onClick={handleClick}
+      onClick={figure ? constVoid :handleClick}
       className={`${targeted ? styles.targeted : styles.tile}`}
       style={{ width: config.tileWidth, height: config.tileHeight }}
     >

@@ -12,8 +12,7 @@ export const Figure = (props: PlayerFigure) => {
   const dispatch = useBoardDispatchContext();
 
   const handleClick = () => {
-    console.log(props.id)
-    console.log(props.boardPosition)
+    console.log('figure', {id: props.id})
     dispatch({ type: 'SET_FIGURE_TARGETED', payload: props.id });
     onTarget();
   };

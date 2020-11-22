@@ -30,7 +30,7 @@ interface ActionHandler {
 
 const setInitialFigurePositions = (): PlayerFigurePositions =>
   pipe({
-    4: {
+    "5": {
       id: '1',
       boardPosition: 4,
       owner: 'me',
@@ -41,8 +41,8 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
         move: {},
       },
     },
-    5: {
-      id: '1',
+    "22": {
+      id: '2',
       boardPosition: 5,
       owner: 'me',
       figureProps: {
@@ -73,11 +73,18 @@ const boardInitialState = {
 const setTileTargeted = (
   state: BoardState,
   action: SET_TILE_TARGETED,
-): BoardState => pipe({ ...state, tileTargeted: action.payload, figurePositions: {...state.figurePositions[action.payload]} });
+): BoardState => {
+  console.log('tile targeted', action.payload)
+  return pipe({ ...state, tileTargeted: action.payload, figurePositions: {...state.figurePositions, ["11"]:state.figurePositions[action.payload]} });
+
+}
 const setFigureTargeted = (
   state: BoardState,
   action: SET_FIGURE_TARGETED,
-): BoardState => pipe({ ...state, figureTargeted: action.payload });
+): BoardState => {
+  console.log('figure targeted', action.payload)
+ return pipe({ ...state, figureTargeted: action.payload });
+}
 
 const actionHandler: ActionHandler = {
   SET_TILE_TARGETED: setTileTargeted,
