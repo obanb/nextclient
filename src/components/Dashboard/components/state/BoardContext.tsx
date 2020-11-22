@@ -73,7 +73,7 @@ const boardInitialState = {
 const setTileTargeted = (
   state: BoardState,
   action: SET_TILE_TARGETED,
-): BoardState => pipe({ ...state, tileTargeted: action.payload });
+): BoardState => pipe({ ...state, tileTargeted: action.payload, figurePositions: {...state.figurePositions[action.payload]} });
 const setFigureTargeted = (
   state: BoardState,
   action: SET_FIGURE_TARGETED,
