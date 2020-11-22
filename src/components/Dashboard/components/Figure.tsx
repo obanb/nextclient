@@ -2,28 +2,19 @@ import React from 'react';
 import { useTarget } from './hooks/useTarget';
 // @ts-ignore
 import Vampire from "../../../../public/vampire.svg"
+import { PlayerFigure } from './types/GameTypes';
+import { useBoardDispatchContext } from './state/BoardContext';
 
-interface FigureProps {
-  uniqueId: number,
-  type: string,
-  name: string,
-  desc: string,
-  attrs: {
-    units: number,
-    attack: number,
-    armor: number
-  }
-  control: {
-    control: boolean,
-    movable: boolean,
-  }
-}
 
-export const Figure = (props: FigureProps) => {
+export const Figure = (props: PlayerFigure) => {
   const [isTargeted, onTarget] = useTarget();
 
+  const dispatch = useBoardDispatchContext();
+
   const handleClick = () => {
-    console.log(props.uniqueId)
+    console.log(props.id)
+    console.log(props.boardPosition)
+    dispatch({ type: 'SET_FIGURE_TARGETED', payload: props.id });
     onTarget();
   };
   return <div onClick={handleClick} className={styles.body}><Vampire style={vanillaStyles.figure}/></div>;

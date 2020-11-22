@@ -39,7 +39,9 @@ const GameBoard = ({ input, config }: Props) => {
     for (let x = 0; x < input.boardsize; x++) {
       for (let y = 0; y < input.boardsize; y++) {
         uniqueId++;
-        console.log(`tile ${x} ${y} from ${input.boardsize}`);
+        // console.log(`tile ${x} ${y} from ${input.boardsize}`);
+
+        const tileFigure = state.figurePositions[uniqueId];
 
         tiles.push({
           positionX: x,
@@ -53,7 +55,7 @@ const GameBoard = ({ input, config }: Props) => {
               positionY={y}
               uniqueId={uniqueId}
               config={config.tile}
-              figure={null}
+              figure={tileFigure}
               targeted={state.tileTargeted === uniqueId ? true: false}
             />
           ),

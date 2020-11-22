@@ -9,14 +9,14 @@ const BoardTile = ({
   uniqueId,
   config,
   figure,
-  targeted
+  targeted,
 }) => {
   const [isTargeted, onTarget] = useTarget();
 
   const dispatch = useBoardDispatchContext();
 
   const handleClick = () => {
-    dispatch({type: 'SET_TILE_TARGETED', payload:uniqueId})
+    dispatch({ type: 'SET_TILE_TARGETED', payload: uniqueId });
     onTarget();
   };
 
@@ -28,7 +28,7 @@ const BoardTile = ({
     >
       {console.log('render')}
       <div className={devStyles.devInfo}>{uniqueId}</div>
-      {uniqueId === 1 && <Figure/>}
+      {figure && <Figure {...figure} />}
     </div>
   );
 };
@@ -39,7 +39,7 @@ const styles = {
 };
 
 const devStyles = {
-  devInfo: 'z-0 absolute'
-}
+  devInfo: 'z-0 absolute',
+};
 
 export default React.memo(BoardTile);
