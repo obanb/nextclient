@@ -67,23 +67,3 @@ const boardReducer = (state: BoardState = boardInitialState, action: (BoardActio
  const useBoardDispatchContext = () => React.useContext(BoardDispatchContext);
 
 export { BoardContext, useBoardReadContext, useBoardDispatchContext };
-
-interface PlayerFigure {
-  id: string,
-  figureProps: {
-    name: string,
-    desc:string,
-    attrs: {
-    },
-    move: {
-    }
-  },
-  boardPosition: number,
-  owner: string,
-}
-
-interface FigureState {
-  player1: PlayerFigure[],
-  player2: PlayerFigure[]
-}
-
