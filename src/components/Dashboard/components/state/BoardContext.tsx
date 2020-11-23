@@ -10,6 +10,7 @@ import { PlayerFigurePositions } from '../types/GameTypes';
 export interface BoardState {
   tileTargeted: string;
   figureTargeted: string;
+  possibleMoves: string[],
   figurePositions: {};
 }
 
@@ -67,6 +68,7 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
 const boardInitialState = {
   tileTargeted: '',
   figureTargeted: '',
+  possibleMoves: [],
   figurePositions: setInitialFigurePositions(),
 };
 
@@ -91,7 +93,7 @@ const setFigureTargeted = (
   action: SET_FIGURE_TARGETED,
 ): BoardState => {
   console.log('figure targeted', action.payload);
-  return pipe({ ...state, figureTargeted: action.payload });
+  return pipe({ ...state, figureTargeted: action.payload, possibleMoves: [] });
 };
 
 const actionHandler: ActionHandler = {

@@ -43,7 +43,7 @@ const GameBoard = ({ input, config }: Props) => {
         // console.log(`tile ${x} ${y} from ${input.boardsize}`);
         const uniqueId = `tile${numberId}`;
 
-        const tileFigure = state.figurePositions[uniqueId.toString()];
+        const tileFigure = state.figurePositions[uniqueId.toString()];  
 
         // console.log(tileFigure);
 
