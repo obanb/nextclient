@@ -12,6 +12,7 @@ const BoardTile = ({
   config,
   figure,
   targeted,
+  possibleMove
 }) => {
   const [isTargeted, onTarget] = useTarget();
 
@@ -38,7 +39,8 @@ const BoardTile = ({
 
 const styles = {
   tile: 'border border-gray-600 float-left z-10',
-  targeted: 'border border-orange-900 float-left bg-green-100',
+  targeted: 'border border-orange-900 float-left bg-yellow-100',
+  possibleMove: 'border border-orange-900 float-left bg-green-100',
 };
 
 const devStyles = {

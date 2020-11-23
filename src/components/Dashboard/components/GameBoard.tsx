@@ -67,6 +67,7 @@ const GameBoard = ({ input, config }: Props) => {
                   : undefined
               }
               targeted={state.tileTargeted === uniqueId ? true : false}
+              possibleMove={false}
             />
           ),
         });
