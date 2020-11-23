@@ -8,12 +8,12 @@ import { PlayerFigurePositions } from '../types/GameTypes';
  */
 
 export interface BoardState {
-  tileTargeted: number;
+  tileTargeted: string;
   figureTargeted: string;
   figurePositions: {};
 }
 
-type SET_TILE_TARGETED = { type: 'SET_TILE_TARGETED'; payload: number };
+type SET_TILE_TARGETED = { type: 'SET_TILE_TARGETED'; payload: string };
 type SET_FIGURE_TARGETED = { type: 'SET_FIGURE_TARGETED'; payload: string };
 
 type BoardActions = SET_TILE_TARGETED | SET_FIGURE_TARGETED;
@@ -30,9 +30,9 @@ interface ActionHandler {
 
 const setInitialFigurePositions = (): PlayerFigurePositions =>
   pipe({
-    "5": {
-      id: '1',
-      boardPosition: 4,
+    tile5: {
+      id: 'figure1',
+      boardPosition: 'tile5',
       owner: 'me',
       figureProps: {
         name: 'vampire',
@@ -41,9 +41,9 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
         move: {},
       },
     },
-    "22": {
-      id: '2',
-      boardPosition: 5,
+    tile22: {
+      id: 'figure2',
+      boardPosition: 'tile22',
       owner: 'me',
       figureProps: {
         name: 'vampire',
@@ -65,7 +65,7 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
 // };
 
 const boardInitialState = {
-  tileTargeted: 0,
+  tileTargeted: '',
   figureTargeted: '',
   figurePositions: setInitialFigurePositions(),
 };
@@ -74,17 +74,25 @@ const setTileTargeted = (
   state: BoardState,
   action: SET_TILE_TARGETED,
 ): BoardState => {
-  console.log('tile targeted', action.payload)
-  return pipe({ ...state, tileTargeted: action.payload, figurePositions: {...state.figurePositions, ["11"]:state.figurePositions[action.payload]} });
-
-}
+  console.log('tile targeted', action.payload);
+  return pipe({
+    ...state,
+    tileTargeted: action.payload,
+    figureTargeted: undefined,
+    figurePositions: {
+      ...state.figurePositions,
+      [state.figureTargeted]: undefined,
+      [action.payload]: state.figureTargeted,
+    },
+  });
+};
 const setFigureTargeted = (
   state: BoardState,
   action: SET_FIGURE_TARGETED,
 ): BoardState => {
-  console.log('figure targeted', action.payload)
- return pipe({ ...state, figureTargeted: action.payload });
-}
+  console.log('figure targeted', action.payload);
+  return pipe({ ...state, figureTargeted: action.payload });
+};
 
 const actionHandler: ActionHandler = {
   SET_TILE_TARGETED: setTileTargeted,

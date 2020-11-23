@@ -12,8 +12,8 @@ export const Figure = (props: PlayerFigure) => {
   const dispatch = useBoardDispatchContext();
 
   const handleClick = () => {
-    console.log('figure', {id: props.id})
-    dispatch({ type: 'SET_FIGURE_TARGETED', payload: props.id });
+    console.log('figure', {bp: props.boardPosition})
+    dispatch({ type: 'SET_FIGURE_TARGETED', payload: props.boardPosition });
     onTarget();
   };
   return <div onClick={handleClick} className={styles.body}><Vampire style={vanillaStyles.figure}/></div>;

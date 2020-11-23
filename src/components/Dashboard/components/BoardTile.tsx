@@ -8,6 +8,7 @@ const BoardTile = ({
   positionY,
   positionX,
   uniqueId,
+  numberId,
   config,
   figure,
   targeted,
@@ -29,7 +30,7 @@ const BoardTile = ({
       style={{ width: config.tileWidth, height: config.tileHeight }}
     >
       {console.log('render')}
-      <div className={devStyles.devInfo}>{uniqueId}</div>
+      <div className={devStyles.devInfo}>{numberId}</div>
       {figure && <Figure {...figure} />}
     </div>
   );

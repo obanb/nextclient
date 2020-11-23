@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { useBoardDispatchContext, useBoardReadContext } from './state/BoardContext';
+import { useBoardReadContext } from './state/BoardContext';
 import BoardTile from './BoardTile';
 
 interface Props {
@@ -19,10 +19,10 @@ interface TileDesc {
   positionX: number;
   positionY: number;
   normalizedPosition: number;
-  uniqueId: number;
+  uniqueId: string;
+  numberId: number;
   component: ReactElement<any, any>;
 }
-
 
 const GameBoard = ({ input, config }: Props) => {
   const tiles: TileDesc[] = [];
@@ -32,34 +32,41 @@ const GameBoard = ({ input, config }: Props) => {
 
   const state = useBoardReadContext();
 
- console.log(JSON.stringify(state));
+  console.log(JSON.stringify(state));
 
   const renderTiles = () => {
-    let uniqueId = 0;
+    let numberId = 0;
 
     for (let x = 0; x < input.boardsize; x++) {
       for (let y = 0; y < input.boardsize; y++) {
-        uniqueId++;
+        numberId++;
         // console.log(`tile ${x} ${y} from ${input.boardsize}`);
+        const uniqueId = `tile${numberId}`;
 
         const tileFigure = state.figurePositions[uniqueId.toString()];
 
-        console.log(tileFigure);
+        // console.log(tileFigure);
 
         tiles.push({
           positionX: x,
           positionY: y,
           normalizedPosition: x + y,
           uniqueId: uniqueId,
+          numberId,
           component: (
             <BoardTile
               key={uniqueId}
               positionX={x}
               positionY={y}
               uniqueId={uniqueId}
+              numberId={numberId}
               config={config.tile}
-              figure={tileFigure}
-              targeted={state.tileTargeted === uniqueId ? true: false}
+              figure={
+                tileFigure
+                  ? { ...tileFigure, boardPosition: uniqueId }
+                  : undefined
+              }
+              targeted={state.tileTargeted === uniqueId ? true : false}
             />
           ),
         });

@@ -7,7 +7,7 @@ export interface PlayerFigure {
     attrs: {};
     move: {};
   };
-  boardPosition: number;
+  boardPosition: string;
   owner: string;
 }
 
