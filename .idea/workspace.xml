@@ -34,7 +34,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4080c049-daaf-4906-927d-2c29f59b8118" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/GameBoard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameBoard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/state/BoardContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/state/BoardContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

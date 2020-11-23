@@ -29,6 +29,19 @@ interface ActionHandler {
  * Impl
  */
 
+
+const recomputePossibleMoves = (boardSize: number, range:number, position: number) => {
+
+  const possiblesMoves = [
+    position + range,
+    position - range,
+    position + (boardSize * range),
+    position - (boardSize * range)
+  ].map(pos => `tile${pos}`)
+
+  return possiblesMoves;
+}
+
 const setInitialFigurePositions = (): PlayerFigurePositions =>
   pipe({
     tile5: {
