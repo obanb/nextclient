@@ -8,7 +8,6 @@ const BoardTile = ({
   positionY,
   positionX,
   uniqueId,
-  numberId,
   config,
   figure,
   targeted,
@@ -27,11 +26,11 @@ const BoardTile = ({
   return (
     <div
       onClick={figure ? constVoid :handleClick}
-      className={`${targeted ? styles.targeted : styles.tile}`}
+      className={`${targeted ? styles.targeted : styles.tile} ${possibleMove ? styles.possibleMove : styles.tile}`}
       style={{ width: config.tileWidth, height: config.tileHeight }}
     >
       {console.log('render')}
-      <div className={devStyles.devInfo}>{numberId}</div>
+      <div className={devStyles.devInfo}>{uniqueId}</div>
       {figure && <Figure {...figure} />}
     </div>
   );

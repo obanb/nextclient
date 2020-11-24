@@ -8,13 +8,13 @@ import { PlayerFigurePositions } from '../types/GameTypes';
  */
 
 export interface BoardState {
-  tileTargeted: string;
+  tileTargeted: number;
   figureTargeted: string;
-  possibleMoves: string[],
+  possibleMoves: number[],
   figurePositions: {};
 }
 
-type SET_TILE_TARGETED = { type: 'SET_TILE_TARGETED'; payload: string };
+type SET_TILE_TARGETED = { type: 'SET_TILE_TARGETED'; payload: number };
 type SET_FIGURE_TARGETED = { type: 'SET_FIGURE_TARGETED'; payload: string };
 
 type BoardActions = SET_TILE_TARGETED | SET_FIGURE_TARGETED;
@@ -29,24 +29,23 @@ interface ActionHandler {
  * Impl
  */
 
-
-const recomputePossibleMoves = (boardSize: number, range:number, position: number) => {
+const recomputePossibleMoves = (boardSize: number, range:number, position: number): number[] => {
 
   const possiblesMoves = [
     position + range,
     position - range,
     position + (boardSize * range),
     position - (boardSize * range)
-  ].map(pos => `tile${pos}`)
+  ]
 
   return possiblesMoves;
 }
 
 const setInitialFigurePositions = (): PlayerFigurePositions =>
   pipe({
-    tile5: {
+    5: {
       id: 'figure1',
-      boardPosition: 'tile5',
+      boardPosition: 5,
       owner: 'me',
       figureProps: {
         name: 'vampire',
@@ -55,9 +54,9 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
         move: {},
       },
     },
-    tile22: {
+    22: {
       id: 'figure2',
-      boardPosition: 'tile22',
+      boardPosition: 22,
       owner: 'me',
       figureProps: {
         name: 'vampire',
@@ -79,7 +78,7 @@ const setInitialFigurePositions = (): PlayerFigurePositions =>
 // };
 
 const boardInitialState = {
-  tileTargeted: '',
+  tileTargeted: 0,
   figureTargeted: '',
   possibleMoves: [],
   figurePositions: setInitialFigurePositions(),
@@ -106,7 +105,7 @@ const setFigureTargeted = (
   action: SET_FIGURE_TARGETED,
 ): BoardState => {
   console.log('figure targeted', action.payload);
-  return pipe({ ...state, figureTargeted: action.payload, possibleMoves: [] });
+  return pipe({ ...state, figureTargeted: action.payload,  possibleMoves: recomputePossibleMoves(20, 2, state.figureTargeted as any) });
 };
 
 const actionHandler: ActionHandler = {

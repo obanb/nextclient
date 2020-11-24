@@ -19,8 +19,7 @@ interface TileDesc {
   positionX: number;
   positionY: number;
   normalizedPosition: number;
-  uniqueId: string;
-  numberId: number;
+  uniqueId: number;
   component: ReactElement<any, any>;
 }
 
@@ -35,15 +34,16 @@ const GameBoard = ({ input, config }: Props) => {
   console.log(JSON.stringify(state));
 
   const renderTiles = () => {
-    let numberId = 0;
+    let uniqueId = 0;
 
     for (let x = 0; x < input.boardsize; x++) {
       for (let y = 0; y < input.boardsize; y++) {
-        numberId++;
+        uniqueId++;
         // console.log(`tile ${x} ${y} from ${input.boardsize}`);
-        const uniqueId = `tile${numberId}`;
 
-        const tileFigure = state.figurePositions[uniqueId.toString()];  
+        const tileFigure = state.figurePositions[uniqueId];
+
+        const isPossibleMove = state.possibleMoves.filter(pos => pos === uniqueId)[0];
 
         // console.log(tileFigure);
 
@@ -51,15 +51,13 @@ const GameBoard = ({ input, config }: Props) => {
           positionX: x,
           positionY: y,
           normalizedPosition: x + y,
-          uniqueId: uniqueId,
-          numberId,
+          uniqueId,
           component: (
             <BoardTile
               key={uniqueId}
               positionX={x}
               positionY={y}
               uniqueId={uniqueId}
-              numberId={numberId}
               config={config.tile}
               figure={
                 tileFigure
@@ -67,7 +65,7 @@ const GameBoard = ({ input, config }: Props) => {
                   : undefined
               }
               targeted={state.tileTargeted === uniqueId ? true : false}
-              possibleMove={false}
+              possibleMove={isPossibleMove}
             />
           ),
         });
