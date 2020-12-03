@@ -10,7 +10,7 @@ import { PlayerFigurePositions } from '../types/GameTypes';
 export interface BoardState {
   tileTargeted: number;
   figureTargeted: string;
-  possibleMoves: number[],
+  possibleMoves: number[];
   figurePositions: {};
 }
 
@@ -29,17 +29,35 @@ interface ActionHandler {
  * Impl
  */
 
-const recomputePossibleMoves = (boardSize: number, range:number, position: number): number[] => {
+const computeBorderTiles = (boardSize: number) => {
+  const topBorders = [];
+  for (let i = 0; i < boardSize; i++) {
+   topBorders.push(i)
+  }
+  const bottomBorders = [];
+  for (let i = 0; i < boardSize * boardSize; i++) {
+    topBorders.push(i)
+  }
+}
 
+const recomputePossibleMoves = (
+  boardSize: number,
+  range: number,
+  position: number,
+): number[] => {
   const possiblesMoves = [
     position + range,
+    position + range - 1,
     position - range,
-    position + (boardSize * range),
-    position - (boardSize * range)
-  ]
+    position - range + 1,
+    position + boardSize * range,
+    position + boardSize * (range - 1),
+    position - boardSize * range,
+    position - boardSize,
+  ];
 
   return possiblesMoves;
-}
+};
 
 const setInitialFigurePositions = (): PlayerFigurePositions =>
   pipe({
@@ -105,7 +123,11 @@ const setFigureTargeted = (
   action: SET_FIGURE_TARGETED,
 ): BoardState => {
   console.log('figure targeted', action.payload);
-  return pipe({ ...state, figureTargeted: action.payload,  possibleMoves: recomputePossibleMoves(20, 2, state.figureTargeted as any) });
+  return pipe({
+    ...state,
+    figureTargeted: action.payload,
+    possibleMoves: recomputePossibleMoves(20, 2, state.figureTargeted as any),
+  });
 };
 
 const actionHandler: ActionHandler = {
