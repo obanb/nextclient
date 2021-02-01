@@ -33,72 +33,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4080c049-daaf-4906-927d-2c29f59b8118" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/next-advanced-starter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vampire.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/BoardTile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/Dashboard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/EntityInfo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/Figure.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameBoard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameController.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/GameInfo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/NewGameForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/hooks/useCreateGame.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/hooks/useTarget.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/state/BoardContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/testik.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Dashboard/components/types/GameTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/i18n/importResources.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/i18n/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/i18n/languages.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/en/common.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locales/ru/common.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/_error.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/api/testik.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/some.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/redirect.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/tailwind.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vercel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/ApolloTest.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/DashboardCopy.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/hooks/useFigure.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/hooks/useTarget.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dashboard/components/hooks/useTarget.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dashboard/components/types/GUITypes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/api/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stgBackend/src/modules/mongoExternal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../stgBackend/src/modules/mongoExternal.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../stgTypes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../stgTypes/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -306,7 +241,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Dashboard/components/hooks/useCreateGame.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="61">
               <caret line="60" column="123" selection-start-line="60" selection-start-column="123" selection-end-line="60" selection-end-column="123" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -606,12 +541,12 @@
       <workItem from="1611666716928" duration="1450000" />
       <workItem from="1611745844096" duration="587000" />
       <workItem from="1611910098487" duration="1475000" />
-      <workItem from="1612169436579" duration="1353000" />
+      <workItem from="1612169436579" duration="1596000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50331000" />
+    <option name="totallyTimeSpent" value="50574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="144" y="18" width="1416" height="1028" extended-state="0" />
@@ -822,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Dashboard/components/hooks/useCreateGame.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="61">
           <caret line="60" column="123" selection-start-line="60" selection-start-column="123" selection-end-line="60" selection-end-column="123" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
